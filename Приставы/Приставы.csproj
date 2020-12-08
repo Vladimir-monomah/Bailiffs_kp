@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{685F25E4-9CAE-48AF-AD77-FE91FA8E1B64}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Приставы</RootNamespace>
+    <AssemblyName>Приставы</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Russia.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DGV2Printer">
+      <HintPath>..\..\..\Downloads\DGV2Printer-master\DGV2Printer-master\build\AnyCpu\NET20\DGV2Printer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityManager.cs" />
+    <Compile Include="Админка\Администратор.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Админка\Администратор.Designer.cs">
+      <DependentUpon>Администратор.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Главная форма.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Главная форма.Designer.cs">
+      <DependentUpon>Главная форма.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Объекты\Должность.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Объекты\Должность.Designer.cs">
+      <DependentUpon>Должность.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Объекты\ИсполнительКарточка.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Объекты\ИсполнительКарточка.Designer.cs">
+      <DependentUpon>ИсполнительКарточка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Объекты\Организация.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Объекты\Организация.Designer.cs">
+      <DependentUpon>Организация.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Объекты\Отдел.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Объекты\Отдел.Designer.cs">
+      <DependentUpon>Отдел.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Объекты\Реквизиты банка.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Объекты\Реквизиты банка.Designer.cs">
+      <DependentUpon>Реквизиты банка.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ПриставыDataSet.cs">
+      <DependentUpon>ПриставыDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ПриставыDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ПриставыDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="РегАвт\Авторизация.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="РегАвт\Авторизация.Designer.cs">
+      <DependentUpon>Авторизация.cs</DependentUpon>
+    </Compile>
+    <Compile Include="РегАвт\Регистрация.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="РегАвт\Регистрация.Designer.cs">
+      <DependentUpon>Регистрация.cs</DependentUpon>
+    </Compile>
+    <Compile Include="РегАвт\Смена пароля.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="РегАвт\Смена пароля.Designer.cs">
+      <DependentUpon>Смена пароля.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Формы\Благодарности.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Формы\Благодарности.Designer.cs">
+      <DependentUpon>Благодарности.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Формы\Восстановление пароля.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Формы\Восстановление пароля.Designer.cs">
+      <DependentUpon>Восстановление пароля.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Формы\Исполнитель.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Формы\Исполнитель.Designer.cs">
+      <DependentUpon>Исполнитель.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Объекты\Карточка должника.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Объекты\Карточка должника.Designer.cs">
+      <DependentUpon>Карточка должника.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Формы\Калькулятор задолженности.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Формы\Калькулятор задолженности.Designer.cs">
+      <DependentUpon>Калькулятор задолженности.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Формы\Новая должность.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Формы\Новая должность.Designer.cs">
+      <DependentUpon>Новая должность.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Формы\Новая организация.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Формы\Новая организация.Designer.cs">
+      <DependentUpon>Новая организация.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Формы\Новый отдел.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Формы\Новый отдел.Designer.cs">
+      <DependentUpon>Новый отдел.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Объекты\Новый пристав исполнитель.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Объекты\Новый пристав исполнитель.Designer.cs">
+      <DependentUpon>Новый пристав исполнитель.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Формы\О программе.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Формы\О программе.Designer.cs">
+      <DependentUpon>О программе.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Формы\Реквизиты банка.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Формы\Реквизиты банка.Designer.cs">
+      <DependentUpon>Реквизиты банка.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Админка\Администратор.resx">
+      <DependentUpon>Администратор.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Главная форма.resx">
+      <DependentUpon>Главная форма.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Объекты\Должность.resx">
+      <DependentUpon>Должность.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Объекты\ИсполнительКарточка.resx">
+      <DependentUpon>ИсполнительКарточка.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Объекты\Организация.resx">
+      <DependentUpon>Организация.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Объекты\Отдел.resx">
+      <DependentUpon>Отдел.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Объекты\Реквизиты банка.resx">
+      <DependentUpon>Реквизиты банка.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="РегАвт\Авторизация.resx">
+      <DependentUpon>Авторизация.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="РегАвт\Регистрация.resx">
+      <DependentUpon>Регистрация.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="РегАвт\Смена пароля.resx">
+      <DependentUpon>Смена пароля.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Формы\Благодарности.resx">
+      <DependentUpon>Благодарности.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Формы\Восстановление пароля.resx">
+      <DependentUpon>Восстановление пароля.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Формы\Исполнитель.resx">
+      <DependentUpon>Исполнитель.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Объекты\Карточка должника.resx">
+      <DependentUpon>Карточка должника.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Формы\Калькулятор задолженности.resx">
+      <DependentUpon>Калькулятор задолженности.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Формы\Новая должность.resx">
+      <DependentUpon>Новая должность.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Формы\Новая организация.resx">
+      <DependentUpon>Новая организация.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Формы\Новый отдел.resx">
+      <DependentUpon>Новый отдел.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Объекты\Новый пристав исполнитель.resx">
+      <DependentUpon>Новый пристав исполнитель.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Формы\О программе.resx">
+      <DependentUpon>О программе.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Формы\Реквизиты банка.resx">
+      <DependentUpon>Реквизиты банка.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ПриставыDataSet.xsc">
+      <DependentUpon>ПриставыDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ПриставыDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ПриставыDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ПриставыDataSet.xss">
+      <DependentUpon>ПриставыDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\05a34de82887e218ad6765cdafed184d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\regnum_picture_15551568816166795_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Russia.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zvezda-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\кнопка 3.png" />
+    <None Include="Resources\кнопка 2.png" />
+    <None Include="Resources\a6d0f13e933bb67363dfbd6e5da5c374.png" />
+    <None Include="Resources\microsoft-excel-logo.png" />
+    <None Include="Resources\exeL.png" />
+    <None Include="Resources\exeL_fri.png" />
+    <None Include="Resources\exeL_fri1.png" />
+    <None Include="Resources\ikonka_1.png" />
+    <None Include="Resources\ikonka_2.png" />
+    <None Include="Resources\ikonka_3.png" />
+    <None Include="Resources\ikonka_4.png" />
+    <None Include="Resources\ikonka_5.png" />
+    <None Include="Resources\ikonka_6.png" />
+    <None Include="Resources\ikonka.png" />
+    <None Include="Resources\ikonka1.png" />
+    <None Include="Resources\ikonka_7.png" />
+    <None Include="Resources\ikonka_8.png" />
+    <Content Include="Russia.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
